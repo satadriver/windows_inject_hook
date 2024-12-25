@@ -13,7 +13,7 @@ DWORD FindProcessID(LPCSTR szProcessName)
     hSnapShot = CreateToolhelp32Snapshot(TH32CS_SNAPALL, NULL);
     Process32First(hSnapShot, &pe);
     wchar_t procname[1024];
-    MultiByteToWideChar(CP_ACP, 0, szProcessName, -1, procname, sizeof(procname));
+    MultiByteToWideChar(CP_ACP, 0, szProcessName, -1, procname, sizeof(procname)/sizeof(wchar_t));
     do
     {
         if (lstrcmpiW(procname, (LPCTSTR)pe.szExeFile)==0)

@@ -2,4 +2,4 @@
 
 
 
-extern "C" int myAsmTest(int);
+extern "C" int AsmInjectedCode(int);
